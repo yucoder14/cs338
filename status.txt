@@ -1,0 +1,9 @@
+Changwoo Yu
+
+I plan to use Kali for learning about security principles and the tools that current professionals use in the industry. 
+I am well aware that the tools that we'll be using can be exploited in malevolent ways, so I plan to be responsible when using the tools and not commit illegal or morally questionable choices. 
+
+I have succesfully installed the Kali Linux distro on VMWare Fusion virtual machine. 
+
+Currently, my only concerns are related to my career prospects.
+
