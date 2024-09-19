@@ -25,3 +25,8 @@
 ```
 11  192.168.187.128     172.233.221.123     HTTP        GET /jeff-square-colorado.jpg HTTP/1.1
 ```
+
+# QUESTIONS
+
+- Are series of [PSH, ACK] from the server an indication that it has sent data to the client? 
+- what does PSH flag do? 
