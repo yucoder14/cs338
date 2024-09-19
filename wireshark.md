@@ -5,7 +5,6 @@
 1   192.168.187.128     129.6.15.28         TCP         [SYN]
 2   129.6.15.28         192.168.187.128     TCP         [SYN,ACK]
 3   192.168.187.128     129.6.15.28         TCP         [SYN]
- 
 ```
 2. 34176 
 3. The client need a port because there are multiple processes running on my machine and needs an identifier to disambiguate the source.
