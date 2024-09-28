@@ -41,6 +41,7 @@ I used the brute force method to find that the shared secret was 1.
 To find the shared secret $K$, we must find $a, b$ such that 
 
 $$K =\quad B^a\mod p\quad =\quad A^b\mod p \quad=\quad g^{ab}\mod p$$
+
 So, I wrote a python script that increments a or b until the above condition is satisfied.
 
 Because I'm using the brute force method, my process has the potential to take decades or centuries had the integers involved were much larger.
