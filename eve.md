@@ -200,7 +200,7 @@ Dear Bob, check this out. https://www.surveillancewatch.io/ See ya, Alice.
 ```
 
 ## Reflection
-Had the integers involved were much larger, it would have taken forever to not only find the prime factors but also the greatest common divisor of two numbers. Additionally, I could have overflowed the stack with too many recursion in my gcd function.
+Had the integers involved were much larger, it would have taken forever to not only find the prime factors but also the greatest common divisor of two numbers. Additionally, I could have overflowed the stack with too many recursive calls in my gcd function.
 
 If Alice did not use rsa, I could have just decoded the message by turning each byte into a printable characters, which is very insecure.
 
