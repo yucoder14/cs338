@@ -67,7 +67,7 @@ Encrypted Data:
 ```
 
 n = 162991
-e = 13 
+e = 13 l
 
 ## Find the prime factors
 
@@ -95,9 +95,9 @@ result:
 p:  389.0 q:  419.0
 ```
 
-## Finding $\lambda(n)
+## Finding $\lambda(n)$
 
-Find $\lambda(n) = \lcm(p - 1, q - 1)$: 
+Find $\lambda(n) = lcm(p - 1, q - 1)$: 
 ```
 def gcd(a,b): 
     if a == 0: 
@@ -112,8 +112,8 @@ ps = 389 - 1
 qs = 419 - 1 
 
 print(lcm(ps,qs))
-
 ```
+
 result:
 ```
 81092.0
@@ -181,7 +181,7 @@ It appears that each block has size of 16 bits or 2 bytes. Perhaps each byte is 
 
 ## Decoding the message
 
-Now we try decoding using base64: 
+Now we try decoding by dividing 2 bytes printable characters: 
 ```
 d = [17509, 24946, 8258, 28514, 11296, 25448, 25955, 27424, 29800, 26995, 8303, 30068, 11808, 26740, 29808, 29498, 12079, 30583, 30510, 29557, 29302, 25961, 27756, 24942, 25445, 30561, 29795, 26670, 26991, 12064, 21349, 25888, 31073, 11296, 16748, 26979, 25902]
 
@@ -203,3 +203,12 @@ Dear Bob, check this out. https://www.surveillancewatch.io/ See ya, Alice.
 ```
 
 ## Reflection
+Had the integers involved were much larger, it would have taken forever to not only find the prime factors but also the greates comon divisor of two numbers. It is very possible that I can overflow the stack with too many recursion calls in my gcd function.
+
+If Alice did not use rsa, I could have just decoded the message by turning each byte into a printable characters, which is very insecure.
+
+Sources
+=======
+https://www.geeksforgeeks.org/euclidean-algorithms-basic-and-extended/
+https://www.cuemath.com/numbers/lcm-least-common-multiple/
+https://en.wikipedia.org/wiki/Fermat%27s_factorization_method
