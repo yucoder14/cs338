@@ -66,9 +66,6 @@ Encrypted Data:
 13649, 120780, 133707, 66992, 128221]
 ```
 
-n = 162991
-e = 13 l
-
 ## Find the prime factors
 
 Given $n$, we must first find prime numbers $p$ and $q$ such that $n = p \cdot q$.
@@ -161,7 +158,7 @@ result:
 [17509, 24946, 8258, 28514, 11296, 25448, 25955, 27424, 29800, 26995, 8303, 30068, 11808, 26740, 29808, 29498, 12079, 30583, 30510, 29557, 29302, 25961, 27756, 24942, 25445, 30561, 29795, 26670, 26991, 12064, 21349, 25888, 31073, 11296, 16748, 26979, 25902]
 ```
 
-The integers are unrecognizable in decimal form. How about hex codes? 
+The integers are unintelligible in decimal form. How about hex codes? 
 ```
 d = [17509, 24946, 8258, 28514, 11296, 25448, 25955, 27424, 29800, 26995, 8303, 30068, 11808, 26740, 29808, 29498, 12079, 30583, 30510, 29557, 29302, 25961, 27756, 24942, 25445, 30561, 29795, 26670, 26991, 12064, 21349, 25888, 31073, 11296, 16748, 26979, 25902]
 
@@ -181,7 +178,7 @@ It appears that each block has size of 16 bits or 2 bytes. Perhaps each byte is 
 
 ## Decoding the message
 
-Now we try decoding by dividing 2 bytes printable characters: 
+Now we try decoding by dividing 2 bytes into 2 printable characters: 
 ```
 d = [17509, 24946, 8258, 28514, 11296, 25448, 25955, 27424, 29800, 26995, 8303, 30068, 11808, 26740, 29808, 29498, 12079, 30583, 30510, 29557, 29302, 25961, 27756, 24942, 25445, 30561, 29795, 26670, 26991, 12064, 21349, 25888, 31073, 11296, 16748, 26979, 25902]
 
@@ -203,7 +200,7 @@ Dear Bob, check this out. https://www.surveillancewatch.io/ See ya, Alice.
 ```
 
 ## Reflection
-Had the integers involved were much larger, it would have taken forever to not only find the prime factors but also the greates comon divisor of two numbers. It is very possible that I can overflow the stack with too many recursion calls in my gcd function.
+Had the integers involved were much larger, it would have taken forever to not only find the prime factors but also the greatest common divisor of two numbers. Additionally, I could have overflowed the stack with too many recursion in my gcd function.
 
 If Alice did not use rsa, I could have just decoded the message by turning each byte into a printable characters, which is very insecure.
 
