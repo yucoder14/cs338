@@ -94,4 +94,8 @@ By refusing to address security bugs, InstaToonz is discouraging the public from
 FINAL JUDGMENT
 ==============
 
-You should share the vulnerability privately with InstaToonz. 
+You should share the vulnerability privately with InstaToonz. While there is the risk of getting into dirty lawsuit with InstaToonz, you are decreasing the overall harm by alerting the InstaToonz of the vulnerability. If InstaToonz is completely unaware of the bug and some bad actor exploits that vulnerability, InstaToonz won't be able to react in timely fashion, possibly resulting in invasion of many users' privacy. However, if you alert InstaToonz about the security risk, then, at least, they will know about the risk. Although you cannot force InstaToonz to act as you would if you did a full disclosure, CVD gives them time to react, even if that reaction is not favorable. 
+
+Even if you get sued for violating DMCA, you can make your case by arguing that you were reverse-engineering for the purpose of interoperability and happened to cross upon a vulnerability. Yet, you would be lying, but for the benefit of the humanity. Also, considering that InstaToonz is a high profile company with millions of users, it is very likely that your lawsuit will receive a big press coverage. Then, the users will become aware of the issues, regardless of InstaToonz's effort to conceal the case (Streisand effect). With increasing publicity of the problem, InstaToonz may be forced to action, achieving your initial goal of making InstaToonz address their software flaw. 
+
+You must prepare yourself for the legal battle that could ensue between you and InstaToonz, considering their history with bug-reporters.   
