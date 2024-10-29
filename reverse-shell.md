@@ -50,7 +50,11 @@ It appears that I should have reading permission, for the reading bit is set for
 ```
 -rw-r--r-- 1 root     root       1936 Oct 24 21:43 passwd
 ```
-However, when I try to read the contents of the file, I get 'This site can't be reached' error. From online searching, /etc/passwd file contain
+Open the file 
+```
+cat /etc/*passwd
+```
+The file contains the following information: 
 - User name
 - Encrypted password
 - UID
@@ -58,6 +62,12 @@ However, when I try to read the contents of the file, I get 'This site can't be 
 - Full name of the user
 - User home directory
 - Login shell
+
+Some examples:
+```
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+```
 
 /etc/shadow
 -----------
