@@ -1,4 +1,4 @@
-1. Session Cookies Working As Intended
+Ⅰ. Session Cookies Working As Intended
 ======================================
 
 ## a. What new cookie did you see when you logged in as Alice?
@@ -11,7 +11,7 @@
  
 ## e. What opportunities do session cookies open to you?
  
-2. Stealing Session Cookies
+Ⅱ. Stealing Session Cookies
 ===========================
 
 ## a. Show an exact copy of your FDF post as Eve. Give a brief explanation of what the Javascript in your FDF post does.
@@ -26,8 +26,7 @@
 
 ## f. Research and explain "HttpOnly." Show exactly where in you diagram of the attack that the use of HttpOnly would prevent Eve's attack from working.
 
-
-3. Privilege Escalation via a Misconfigured /etc/passwd File
+Ⅲ. Privilege Escalation via a Misconfigured /etc/passwd File
 ============================================================
 
 ## a. Show the Unix permissions of /etc/passwd and /etc/shadow on Kali VM 
