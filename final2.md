@@ -6,7 +6,8 @@
 
 Textbook RSA is deterministic encryption algorithm, i.e., it will always produce the same encryption given the same plain text messages. Because of its deterministic characteristics, attackers can conduct "chosen plain text attack" against RSA. In a chosen plain text attack, the attackers try to guess what the cipher text is by encrypting plain texts using the appropriate public key and then comparing it with the cipher text. If the encrypted plain text matches with the cipher text, the attacker just figured out the encrypted message.  
 
-Another problem with textbook RSA is that it is vulnerable to chosen-cipher attack. In a chosen-cipher attack, the attacker exploits the fact that $m_1^em_2^e \equiv (m_1m_2)^e \mod n$
+Another problem with textbook RSA is that it is vulnerable to chosen-cipher attack. In a chosen-cipher attack, the attacker exploits the fact that $m_1^em_2^e \equiv (m_1m_2)^e \mod n$: 
+> an attacker who wants to know the decryption of a ciphertext c ≡ me (mod n) may ask the holder of the private key d to decrypt an unsuspicious-looking ciphertext c′ ≡ cre (mod n) for some value r chosen by the attacker. Because of the multiplicative property, c' is the encryption of mr (mod n). Hence, if the attacker is successful with the attack, they will learn mr (mod n), from which they can derive the message m by multiplying mr with the modular inverse of r modulo n
 
 Source: https://en.wikipedia.org/wiki/RSA_(cryptosystem)
 
